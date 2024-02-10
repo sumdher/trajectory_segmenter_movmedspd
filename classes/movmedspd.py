@@ -330,7 +330,7 @@ class MovMedSpeedSegmenter:
                 if val is not None
             ]
             mean_elbow = np.mean(elbows) if elbows else None
-            
+
             elbow_points_data.append({
                 'person_id': person_id,
                 'first_elbow': first_elbow,
