@@ -1,4 +1,4 @@
-# Segmenter MovMedSpd
+# MovMedSpd Segmenter
 - Detects low speed segments from spatiotemporal trajectories and determines the closest Point Of Interest (POI) from each segment's centroid.
 - Extracts, processes and works on the main feature: _speed_. Applies a denoising filter: Moving median (on speed).
 - Problem: Discrete segmentation of a time-series signal, signal processing.
@@ -38,9 +38,15 @@ Shape: start_time, end_time, (x, y) centroid, closest POI (and other things)
 
 # Results
 
+- A novel evaluation criteria were developed by my professors in Univeristy of Milan. Link _[here](https://doi.org/10.1109/PerCom53586.2022.9762404)_.
+- It evaluates the stops both quantitatively and qualitatively. **F-score** is the quantitative evaluation and **S-score** is the qualitative aspect - the amount of spatial and temporal overlap with the real stop. **TP** is the number of true positives.
+- The table shows the result of the evaluation of the segments extracted from 20 trajectories. Rows highlighted in yellow are the results of this algorithm.
+- Row with window = auto is where it adaptively determines the best window size for all trajectories.
+- Otherwise, a constant window of 15 for all trajectories was also found to be good.
+<img width="989" alt="Group 2" src="https://github.com/sumdher/MovMedSpdEval/assets/26754139/53a9ad55-65b3-4512-bdfa-17e8b43c7338">
 
 
-# Screengraps of the Interface
+# Screengrabs of the Interface
 
 ![image](https://github.com/sumdher/MovMedSpdEval/assets/26754139/7d983d04-8dbb-4e41-beef-9d9109d19f02)
 ![image](https://github.com/sumdher/MovMedSpdEval/assets/26754139/802dacfd-72ad-43a9-a9b3-fea0da9b9105)
