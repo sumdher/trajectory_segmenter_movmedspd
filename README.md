@@ -7,6 +7,7 @@ Key libraries (besides the usual):
 _[find_peaks](https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.find_peaks.html)_ to find the peaks and valleys.
 _[KneeLocator](https://pypi.org/project/kneed/)_ to find the elbow points.
 _[ipywidgets](https://ipywidgets.readthedocs.io/en/stable/)_ for a Google Colab/Jupyter interface for dynamic visualization.
+For more dependencies, please refer to `requirements.txt`
 
 ## Strengths:
 - Data-driven, adaptive determination of window sizes for moving median and other parameters from the data, instead of arbitrarily setting them. (Entropy difference and Jensen-Shannon Divergence)
