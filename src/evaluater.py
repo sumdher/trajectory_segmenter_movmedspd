@@ -1,25 +1,8 @@
-import logging
 import math
-import os
-import time
-from datetime import datetime
-
-import geopandas as gpd
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import psycopg2
-import scipy.signal
-from ipywidgets import HTML, VBox, Layout, HBox, Label, Button, Output, IntText
-import ipywidgets as widgets
-from IPython.display import display, clear_output
-from kneed import KneeLocator
 from pulp import *
-from scipy.interpolate import interp1d
-from scipy.spatial.distance import cdist, jensenshannon
-from scipy.stats import entropy
-from shapely.geometry import Point, MultiLineString
-from shapely.wkb import loads
+
 
 
 class MatchingRetrieverNew:
@@ -244,7 +227,7 @@ class MatchingRetrieverNew:
                 for j in range(length)) == length
             )
 
-            prob.solve()
+            prob.solve(PULP_CBC_CMD(msg=False))
 
             average_j = 0.0
             true_positive = 0

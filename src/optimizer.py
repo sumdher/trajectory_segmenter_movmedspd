@@ -1,25 +1,21 @@
-import logging
-import math
-import os
-import time
-from datetime import datetime
 
-import geopandas as gpd
+import time
 import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
-import psycopg2
-import scipy.signal
-from ipywidgets import HTML, VBox, Layout, HBox, Label, Button, Output, IntText
-import ipywidgets as widgets
-from IPython.display import display, clear_output
-from kneed import KneeLocator
+from IPython.display import clear_output
 from pulp import *
-from scipy.interpolate import interp1d
-from scipy.spatial.distance import cdist, jensenshannon
-from scipy.stats import entropy
-from shapely.geometry import Point, MultiLineString
-from shapely.wkb import loads
+
+import sys
+sys.path.insert(1, 'C:\\ZZZZZ Pette ZZZZZ\\TrajectorySegmenter')
+
+from src.segmenter import MovMedSpeedSegmenter
+from src.evaluater import MatchingRetrieverNew
+
+df = pd.read_csv('data\df_20.csv')
+df_gt = pd.read_csv('data\df_gt_20.csv')
+
+df_gt = df_gt[df_gt['dur'] >= 10]  # discard segments with duration < 10s
+exhibits_df = pd.read_csv('data\POIs.csv')
 
 
 class Optimizer:
@@ -298,6 +294,6 @@ class Optimizer:
         })
         clear_output(wait=True)
         print("Entropy difference at max S-score: ")
-        print(df_avg_jacc)
+        print(self.df_avg_jacc)
         print("Entropy difference at max F-score: ")
-        print(df_avg_jacc)
+        print(self.df_avg_jacc)

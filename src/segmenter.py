@@ -1,14 +1,9 @@
 import logging
-import math
-import os
-import time
 from datetime import datetime
 
-import geopandas as gpd
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import psycopg2
 import scipy.signal
 from ipywidgets import HTML, VBox, Layout, HBox, Label, Button, Output, IntText
 import ipywidgets as widgets
@@ -211,7 +206,10 @@ class MovMedSpeedSegmenter:
 
         jsd_values = non_zero_speed.groupby('person_id').apply(_calculate_jsd)
         temp_df['x_jsd'] = temp_df['person_id'].map(jsd_values)
-
+        
+        if self.stats_df is not None:
+            self.stats_df = self.stats_df.fillna(0)
+        temp_df = temp_df.fillna(0)
         if self.stats_df is None:
             self.stats_df = temp_df.copy()
         else:
@@ -221,7 +219,7 @@ class MovMedSpeedSegmenter:
             self.stats_df = self.stats_df.sort_values(
             by=["person_id", "window"]
             )
-
+        self.stats_df = self.stats_df.sort_values(by=["person_id", "window"])
     def jsd_elbow_curve(self, min, max, step, plot=False):
 
         window_sizes = range(min, max + step, step)
@@ -1436,7 +1434,7 @@ class MovMedSpeedSegmenter:
         self.final_segments_df["next_start_id"] = (
             self.final_segments_df["start_id"]
             .shift(-1)
-            .fillna(method="ffill")
+            .ffill()
             .astype(int)
         )
 
@@ -1481,7 +1479,7 @@ class MovMedSpeedSegmenter:
         self.final_segments_df["next_start_id"] = (
             self.final_segments_df["start_id"]
             .shift(-1)
-            .fillna(method="ffill")
+            .ffill()
             .astype(int)
         )
 
