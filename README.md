@@ -20,11 +20,11 @@ _[ipywidgets](https://ipywidgets.readthedocs.io/en/stable/)_ for a Google Colab/
 
 ## IMPLEMENTATION
 
-- An abstract high-level implementation that will do the job and **find the segments** is in the file `find_segments_adaptive_parameters.py` in the directory "example_implementations".
+- An abstract high-level implementation that will do the job and **find the segments** is in the file `find_segments_adaptive_parameters.py`.
 - To **visualize the speed graph**, an interactive widget is made for Python noteooks like Jupyter and Colab.
-  This is implemented in the file `visualize_segments.py` in the directory "example_implementations".
+  This is implemented in the file `visualize_segments.py`.
 - In the presence of the ground truth, one can also **optimise the parameters** to find the best combination that yields
-  the best results to further study the data. This is implemented in `optimize_parameters.py` in the directory "example_implementations".
+  the best results to further study the data. This is implemented in `optimize_parameters.py`. 
 
 ## Requires:
 **Spatiotemporal trajactory data**
