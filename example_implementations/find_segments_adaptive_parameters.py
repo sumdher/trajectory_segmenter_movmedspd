@@ -43,24 +43,30 @@ print(f'Execution time: {(end_time - start_time)}')
 
 # Evaluation
 
-eval_med = MatchingRetrieverNew(result_segments, df_gt)
-eval_med.process_prep()  # Processes and sets the data up.
-eval_results = eval_med.find_match(alfa=0.5)
+"""
+Uncomment the code below if ground truth is present.
+The below code will evaluate the segments detected above with the real ones.
+Various statistical measures can be seen.
+"""
 
-if eval_results is not None:
-    print(f"Ends refined with {tol}*std: ",
-          eval_results['avg_jacc'].mean(),
-          "+-",
-          eval_results['avg_jacc'].std()
-    )
+# eval_med = MatchingRetrieverNew(result_segments, df_gt)
+# eval_med.process_prep()  # Processes and sets the data up.
+# eval_results = eval_med.find_match(alfa=0.5)
 
-    print(eval_results[['person_id', 'f_measure', 'avg_jacc']])
-    print(eval_results[['f_measure', 'avg_jacc']].mean())
-    print(eval_results[['recall', 'precision', 'accuracy']].mean())
+# if eval_results is not None:
+#     print(f"Ends refined with {tol}*std: ",
+#           eval_results['avg_jacc'].mean(),
+#           "+-",
+#           eval_results['avg_jacc'].std()
+#     )
 
-    print(
-        eval_results[
-            ["true_positive", "true_negative",
-             "false_positive", "false_negative"]
-        ].sum()
-    )
+#     print(eval_results[['person_id', 'f_measure', 'avg_jacc']])
+#     print(eval_results[['f_measure', 'avg_jacc']].mean())
+#     print(eval_results[['recall', 'precision', 'accuracy']].mean())
+
+#     print(
+#         eval_results[
+#             ["true_positive", "true_negative",
+#              "false_positive", "false_negative"]
+#         ].sum()
+#     )
