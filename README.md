@@ -9,7 +9,7 @@ _[KneeLocator](https://pypi.org/project/kneed/)_ to find the elbow points.
 _[ipywidgets](https://ipywidgets.readthedocs.io/en/stable/)_ for a Google Colab/Jupyter interface for dynamic visualization.
 
 ## Strengths:
-- Data-driven, adaptive determination of window sizes for moving median from the data, instead of arbitrarily setting it. (Entropy difference and Jensen-Shannon Divergence)
+- Data-driven, adaptive determination of window sizes for moving median and other parameters from the data, instead of arbitrarily setting them. (Entropy difference and Jensen-Shannon Divergence)
 - Interface for dynamic visualiations (of graphs) to manually determine and define the parameters.
 - Comparable results with existing algorithms; sometimes better in some aspects. (See section: "**Results**")
 - Fast and robust.
@@ -17,6 +17,14 @@ _[ipywidgets](https://ipywidgets.readthedocs.io/en/stable/)_ for a Google Colab/
 ## Weaknesses:
 - Unusual behaviour if the data is too noisy.
 - Needs POIs' locations to be known in advance (Future work).
+
+## IMPLEMENTATION
+
+- An abstract high-level implementation that will do the job and **find the segments** is in the file `find_segments_adaptive_parameters.py` in the directory "example_implementations".
+- To **visualize the speed graph**, an interactive widget is made for Python noteooks like Jupyter and Colab.
+  This is implemented in the file `visualize_segments.py` in the directory "example_implementations".
+- In the presence of the ground truth, one can also **optimise the parameters** to find the best combination that yields
+  the best results to further study the data. This is implemented in `optimize_parameters.py` in the directory "example_implementations".
 
 ## Requires:
 **Spatiotemporal trajactory data**
