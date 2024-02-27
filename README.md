@@ -1,4 +1,4 @@
-# MovMedSpd Segmenter
+# MovMedSpeed Segmenter
 - Detects low speed segments from spatiotemporal trajectories and determines the closest Point Of Interest (POI) from each segment's centroid.
 - Extracts, processes and works on the main feature: _speed_. Applies a denoising filter: Moving median (on speed).
 - Problem: Discrete segmentation of a time-series signal, signal processing.
