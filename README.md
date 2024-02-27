@@ -3,7 +3,7 @@
 - Extracts, processes and works on the main feature: _speed_. Applies a denoising filter: Moving median (on speed).
 - Problem: Discrete segmentation of a time-series signal, signal processing.
 
-Key liraries:
+Key libraries (besides the usual):
 _[find_peaks](https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.find_peaks.html)_ to find the peaks and valleys.
 _[KneeLocator](https://pypi.org/project/kneed/)_ to find the elbow points.
 _[ipywidgets](https://ipywidgets.readthedocs.io/en/stable/)_ for a Google Colab/Jupyter interface for dynamic visualization.
