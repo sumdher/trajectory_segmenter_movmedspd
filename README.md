@@ -10,13 +10,13 @@ _[KneeLocator](https://pypi.org/project/kneed/)_ to find the elbow points.
 _[ipywidgets](https://ipywidgets.readthedocs.io/en/stable/)_ for a Google Colab/Jupyter interface for dynamic visualization.
 For more dependencies, please refer to `requirements.txt`
 
-## Strengths:
+## Strengths
 - Analytical, information-driven determination of parameters from the data. Instead of setting arbitrary objective parameters for all trajectories, determines personalized subjective parameters for each trajectory (using entropy difference, Jensen-Shannon Divergence and   other heuristics).
 - Neat interface for dynamic visualiation (of graphs along with sliders for parameters) to see the effect of various parameters in the segmentation of trajectories.
 - Comparable results with existing state-of-the-art algorithms in the literature; sometimes even better in some aspects (See section: "**Results**" below).
 - Fast and robust.
 
-## Weaknesses:
+## Weaknesses
 - Unusual behaviour if the data is too noisy.
 - Needs POIs' locations to be known in advance (Future work).
 - The method works for indoor trajectories with mainly low-speed data, the adaptation to other kinds of data needs to be studied. (Future work)
