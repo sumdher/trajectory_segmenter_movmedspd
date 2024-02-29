@@ -1,7 +1,8 @@
 # MovMedSpeed Trajectory Segmenter
-- Detects low speed segments from spatiotemporal trajectories and determines the closest Point Of Interest (POI) from each segment's centroid.
-- Extracts, processes and works on the main feature: _speed_. Applies a denoising filter: Moving median (on speed).
-- Problem: Discrete segmentation of a time-series speed graph, close to signal processing.
+- Detects low speed segments within a spatiotemporal trajectory (indoor - UWB localization system) and determines the closest Point Of Interest (POI) from the segments' centroids.
+- A novel method -- a data processing pipeline that automatically determines unique parameters for each trajectory, within a given set of trajectories.
+- Extracts, processes and works on the main feature: _speed_. Applies a filter to mitigate noise: Moving median (on speed), (or, moving average and EMA/EWM).
+- Problem: Discrete segmentation of a time-series graph with irregular sampling rate, close to signal processing.
 
 Key libraries (besides the usual):
 _[find_peaks](https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.find_peaks.html)_ to find the peaks and valleys.
@@ -10,7 +11,7 @@ _[ipywidgets](https://ipywidgets.readthedocs.io/en/stable/)_ for a Google Colab/
 For more dependencies, please refer to `requirements.txt`
 
 ## Strengths:
-- Data-driven, adaptive determination of window sizes for moving median and other parameters from the data, instead of arbitrarily setting them. (Entropy difference and Jensen-Shannon Divergence)
+- Data-driven, adaptive determination of parameters from the data, instead of arbitrarily setting them. (Entropy difference and Jensen-Shannon Divergence)
 - Interface for dynamic visualiations (of graphs) to manually determine and define the parameters.
 - Comparable results with existing algorithms; sometimes better in some aspects. (See section: "**Results**")
 - Fast and robust.
@@ -18,6 +19,7 @@ For more dependencies, please refer to `requirements.txt`
 ## Weaknesses:
 - Unusual behaviour if the data is too noisy.
 - Needs POIs' locations to be known in advance (Future work).
+- The method works for indoor trajectories with mainly low-speed data, the adaptation to other kinds of data needs to be studied. (Future work)
 
 ## IMPLEMENTATION
 
