@@ -1,6 +1,6 @@
 # MovMedSpeed Trajectory Segmenter
 - Detects low speed segments within a spatiotemporal trajectory (indoor - UWB localization system) and determines the closest Point Of Interest (POI) from the segments' centroids.
-- A novel method -- a data processing pipeline that automatically determines unique parameters for each trajectory, within a given set of trajectories.
+- A novel method -- a data processing pipeline that automatically determines unique parameters for each trajectory, within a given set of trajectories. Various visualizations to choose optimal parameters, validated and tested with ground truth.
 - Extracts, processes and works on the main feature: _speed_. Applies a filter to mitigate noise: Moving median (on speed), (or, moving average and EMA/EWM).
 - Problem: Discrete segmentation of a time-series graph with irregular sampling rate, close to signal processing.
 
