@@ -21,7 +21,7 @@ For more dependencies, please refer to `requirements.txt`
 - Needs POIs' locations to be known in advance (Future work).
 - The method works for indoor trajectories with mainly low-speed data, the adaptation to other kinds of data needs to be studied. (Future work)
 
-## IMPLEMENTATION
+## Implementation
 
 - An abstract high-level implementation that will do the job and **finds the segments** is in the file `find_segments_adaptive_parameters.py`.
 - To **visualize the speed graph** and and see the effect of the parameters, an interactive widget is made for Python noteooks like Jupyter and Colab.
