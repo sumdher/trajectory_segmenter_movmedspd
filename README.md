@@ -23,11 +23,11 @@ For more dependencies, please refer to `requirements.txt`
 
 ## Implementation
 
-- An abstract high-level implementation that will do the job and **finds the segments** is in the file `find_segments_adaptive_parameters.py`.
+- An abstract high-level implementation that will do the job and **finds the segments** is in the file `1_find_segments_adaptive_parameters.py`.
 - To **visualize the speed graph** and and see the effect of the parameters, an interactive widget is made for Python noteooks like Jupyter and Colab.
-  This is implemented in the file `visualize_segments.py`.
+  This is implemented in the file `2_visualize_segments.py`.
 - In the presence of the ground truth, one can also **optimise the parameters** to find the best combination that yields
-  the best results to further study the data/method. This is implemented in `optimize_parameters.py`.
+  the best results to further study the data/method. This is implemented in `3_optimize_parameters.py`.
 
 ## Requires:
 **1. Spatiotemporal trajactory data**
