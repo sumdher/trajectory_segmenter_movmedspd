@@ -54,7 +54,9 @@ Schema: start_time, end_time, (x, y) centroid, closest POI (and other things).
 - The table below shows the result of the evaluation of the segments extracted from 20 trajectories. Rows highlighted in yellow are the results of this algorithm.
 - Row with window = auto is where it adaptively determines the best window size for all trajectories.
 - Otherwise, a constant window of 15 for all trajectories was also found to be good.
-<img width="989" alt="Group 2" src="https://github.com/sumdher/MovMedSpdEval/assets/26754139/53a9ad55-65b3-4512-bdfa-17e8b43c7338">
+![image](https://github.com/sumdher/trajectory_segmenter_movmedspd/assets/26754139/b7696790-5b3b-4a8c-adc0-ffc329356118)
+
+
 
 
 # Screengrabs of the Interface
